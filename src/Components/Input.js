@@ -1,21 +1,33 @@
 import React, {useState} from 'react';
+import FetchPics from './FetchPics'
 
 
-const SearchQuery = () => {
+export const SearchQuery = () => {
 
-    const [query, setQuery] = useState('')
+  const [query, setQuery] = useState('')
+  const handleChange = (e) => {
+      setQuery(e.target.value);
+      return query
+  }
 
-    const handleChange = (e) => {
-        setQuery(e.target.value);
-        console.log(query)
-        return query
-    }
+  console.log(`in searchQuery ${query}`);
+  
 
   return (
     <div>
-        <input type='text' id='searchQuery' name='searchQuery' onChange={handleChange}/>
+
+      <input 
+      type='text' 
+      id='searchQuery' 
+      value={query} 
+      name='searchQuery' 
+      onChange={handleChange}
+      />
+
+      <FetchPics inputVal={query} />
+
     </div>
   )
 }
 
-export default SearchQuery;
+// export default SearchQuery;

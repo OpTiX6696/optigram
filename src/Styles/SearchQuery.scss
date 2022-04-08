@@ -3,7 +3,7 @@
 #header {
   // border: 2px solid red;
   display: flex;
-  flex-wrap: wrap;
+  // flex-wrap: wrap;
   justify-content: space-between;
   padding: 7px 5%;
   background-color: white;
@@ -17,7 +17,7 @@
 
 
   div#logo {
-    // border: 2px solid green;
+    border: 2px solid green;
     // color: #16b7f8;
     font-family: 'Pacifico', cursive;
     font-weight: lighter;
@@ -25,7 +25,7 @@
   }
 
   div.queryInput {
-    // border: 2px solid green;
+    border: 2px solid green;
     display: flex;
     gap: 20px;
     justify-content: center;
@@ -37,7 +37,7 @@
 
 
     input#searchQuery {
-      width: 200px;
+      width: 50%;
       height: 80%;
       padding: 0 10px;
       font-size: inherit;
@@ -72,3 +72,18 @@ div#inputError {
   border-radius: 5px;
   font-size: larger;
 }
+
+// @media screen and (max-width: 600px) {
+//   #header {
+
+//     div.queryInput {
+//       gap: 10px;
+
+//       input#searchQuery {
+//         // width: 150px;
+//       }
+
+//     }
+
+//   }
+// }

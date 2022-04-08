@@ -1,0 +1,74 @@
+// @import url('https://fonts.googleapis.com/css2?family=Beau+Rivage&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alice&family=Beau+Rivage&family=Cinzel:wght@400;500;600&family=Courgette&family=Forum&family=Great+Vibes&family=Pacifico&family=Satisfy&display=swap');
+#header {
+  // border: 2px solid red;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 7px 5%;
+  background-color: white;
+  color: #16b7f8;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  border-bottom: 1px solid #16b7f8;
+  z-index: 2;
+
+
+  div#logo {
+    // border: 2px solid green;
+    // color: #16b7f8;
+    font-family: 'Pacifico', cursive;
+    font-weight: lighter;
+    font-size: 0.7em;
+  }
+
+  div.queryInput {
+    // border: 2px solid green;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Forum', cursive;
+    font-size: 1.2rem;
+
+
+
+
+    input#searchQuery {
+      width: 200px;
+      height: 80%;
+      padding: 0 10px;
+      font-size: inherit;
+      font-family: inherit;
+      border: 1px solid #16b7f8;
+      border-radius: 5px;
+    }
+
+    button {
+      font-family: inherit;
+      height: 80%;
+      padding: 2px 12px;
+      font-size: inherit;
+      letter-spacing: 2px;
+      background-color: #16b7f8;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      font-weight: bolder;
+    }
+  }
+}
+
+div#inputError {
+  margin: 0 auto;
+  width: max-content;
+  margin-top: 75px;
+  border: 1px solid #16b7f8;
+  padding: 7px 15px;
+  font-family: 'Cinzel', cursive;
+  color: red;
+  border-radius: 5px;
+  font-size: larger;
+}

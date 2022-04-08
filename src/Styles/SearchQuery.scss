@@ -17,7 +17,7 @@
 
 
   div#logo {
-    border: 2px solid green;
+    // border: 2px solid green;
     // color: #16b7f8;
     font-family: 'Pacifico', cursive;
     font-weight: lighter;
@@ -25,15 +25,13 @@
   }
 
   div.queryInput {
-    border: 2px solid green;
+    // border: 2px solid green;
     display: flex;
     gap: 20px;
     justify-content: center;
     align-items: center;
     font-family: 'Forum', cursive;
     font-size: 1.2rem;
-
-
 
 
     input#searchQuery {
@@ -48,10 +46,9 @@
 
     button {
       font-family: inherit;
-      height: 80%;
-      padding: 2px 12px;
+      padding: 5px 12px;
       font-size: inherit;
-      letter-spacing: 2px;
+      letter-spacing: 1px;
       background-color: #16b7f8;
       border: none;
       border-radius: 5px;
@@ -73,17 +70,22 @@ div#inputError {
   font-size: larger;
 }
 
-// @media screen and (max-width: 600px) {
-//   #header {
+@media screen and (max-width: 600px) {
+  #header {
+    padding: 3px 2%;
 
-//     div.queryInput {
-//       gap: 10px;
+    div.queryInput {
+      gap: 10px;
 
-//       input#searchQuery {
-//         // width: 150px;
-//       }
+      input#searchQuery {
+        // width: 150px;
+      }
+      button {
+        padding: 2px 7px;
+        font-size: smaller;
+      }
 
-//     }
+    }
 
-//   }
-// }
+  }
+}

@@ -2,14 +2,14 @@ import React, {useState} from 'react';
 import { Credentials } from "./Credentials";
 import { createApi } from 'unsplash-js';
 import RenderPhotos from "./RenderPhotos";
-import loader from '../Loader/Infinity-0.9s-200px.svg';
+import loader from '../Imgs/Infinity-0.9s-200px.svg';
 import InfiniteScroll from 'react-infinite-scroller';
 import '../Styles/SearchQuery.scss'
 
 
 
 
-export const SearchQuery = () => {
+const SearchQuery = () => {
 
   const [queryInput, setQueryInput] = useState();
   const [queryError, setQueryError] = useState();
@@ -43,7 +43,7 @@ export const SearchQuery = () => {
           setQueryError("Invalid query parameter")
         } else {
           setPage((page) => (page + 1));
-          console.log("ALL PHOTOS", allPhotos)
+          // console.log("ALL PHOTOS", allPhotos)
           fetchedPhotos = [...allPhotos]          
         }
       }
@@ -61,7 +61,7 @@ export const SearchQuery = () => {
     } else {
       setQueryError('')
       const newPhotos = await getPhotos()
-      console.log("ON SUBMIT", newPhotos);
+      // console.log("ON SUBMIT", newPhotos);
       setPhotos(newPhotos);
     }
 
@@ -69,7 +69,7 @@ export const SearchQuery = () => {
 
   const getMorePhotos = async () => {
     const morePhotos = await getPhotos()
-    console.log(`MORE PICS ${morePhotos}`);
+    // console.log(`MORE PICS ${morePhotos}`);
     setPhotos((existingPhotos) => [...existingPhotos, ...morePhotos])
   }
 

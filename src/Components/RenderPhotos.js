@@ -1,13 +1,13 @@
 import React from "react";
 import '../Styles/RenderPhotos.scss'
-import Photo from './Photo'
+import { Photo } from './Photo'
 
 
 const RenderPhotos = (props) => {
 
   const photos = props.newPhotos;
 
-  console.log("in renderphotos", photos)
+  // console.log("in renderphotos", photos)
 
   return (
     <div id="container">

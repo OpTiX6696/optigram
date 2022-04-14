@@ -1,8 +1,7 @@
 
 
 div.photoContainer {
-  border: 2px solid red;
-  // border: 1px solid #16b7f8;
+  border: 1px solid #16b8f865;
   border-radius: 7px;
   width: 45%;
   box-shadow: 0.1px 0.2px 7px 0.1px #16b8f83a;
@@ -23,12 +22,55 @@ div.photoContainer {
   div.photoTitle {
     // border: 2px solid red;
     border-top: 1px solid #16b8f8;
+    border-bottom: 1px solid #16b8f8;
     font-family: 'Cinzel', cursive;
     padding: 2px 5px;
     text-align: left;
     margin-top: 7px;
   }
 
+  div.controls {
+    // border: 2px solid red;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: larger;
+    padding: 5px;
+    color: #16b8f8;
+
+
+    a.downloadBtn, button.likeBtn {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a.downloadBtn {
+      // border: 2px solid green;
+      // font-size: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+
+      .downloadImg {
+        font-size: 150%;
+      }
+    }
+
+    button.likeBtn {
+      // border: 2px solid red;
+      background: none;
+      padding: 5px;
+      width: 2.4rem;
+      height: 2rem;
+      border: none;
+
+
+
+    }
+
+
+  }
   
 }
 

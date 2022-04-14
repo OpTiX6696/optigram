@@ -1,5 +1,6 @@
 import React from "react";
 import '../Styles/RenderPhotos.scss'
+import Photo from './Photo'
 
 
 const RenderPhotos = (props) => {
@@ -11,19 +12,8 @@ const RenderPhotos = (props) => {
   return (
     <div id="container">
       {/* To render pics */}
-
        {photos && photos.map((photo, index) => {
-        return (
-
-          <div key={index} className='photoContainer'>
-            <div className="photo">
-              <img alt="" src={photo.urls.raw} />
-            </div>
-            <div className="photoTitle">
-              {photo.alt_description ? <p>{photo.alt_description}</p> : <p>Description Unavailable</p>}
-            </div>
-          </div>
-        )
+        return <Photo photo={photo} index={index} key={index}/>        
       }
         
       )}

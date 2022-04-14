@@ -72,8 +72,6 @@ export const SearchQuery = () => {
     console.log(`MORE PICS ${morePhotos}`);
     setPhotos((existingPhotos) => [...existingPhotos, ...morePhotos])
   }
-  // console.log(`new page is ${page}`);
-  // console.log(`allll photos are ${photos}`);
 
   const handleChange = (e) => {
     setQueryInput(e.target.value);
@@ -117,10 +115,11 @@ export const SearchQuery = () => {
           hasMore={true || false}
           threshold={0.1*window.screen.height}
           loader={<div id='loader'><img alt='' src={loader} /></div>}
-        >
-          {<RenderPhotos newPhotos = {photos} />}
-        </InfiniteScroll>
-        ) : null}
+          >
+            {<RenderPhotos newPhotos = {photos} />}
+          </InfiniteScroll>
+          ) : null
+        }
       </div>
         
     </div>

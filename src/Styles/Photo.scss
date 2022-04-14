@@ -1,0 +1,42 @@
+
+
+div.photoContainer {
+  border: 2px solid red;
+  // border: 1px solid #16b7f8;
+  border-radius: 7px;
+  width: 45%;
+  box-shadow: 0.1px 0.2px 7px 0.1px #16b8f83a;
+  overflow: hidden;
+  // height: max-content;
+
+  div.photo {
+    // border: 1px solid #16b7f8;
+    margin: 5px;
+
+    img {
+      width: 100%;
+      border-radius: 5px;
+      // height: 100%;
+    }
+  }
+
+  div.photoTitle {
+    // border: 2px solid red;
+    border-top: 1px solid #16b8f8;
+    font-family: 'Cinzel', cursive;
+    padding: 2px 5px;
+    text-align: left;
+    margin-top: 7px;
+  }
+
+  
+}
+
+
+@media only screen and (max-width: 600px) {
+
+  div.photoContainer {
+    // border: 2px solid red;
+    width: 90%;
+  }
+}

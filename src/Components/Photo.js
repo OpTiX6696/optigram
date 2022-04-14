@@ -35,7 +35,7 @@ export const Photo = ({photo, index}) => {
 
       <div className='controls'>
 
-        <a className='downloadBtn' href={`${download}&force=true`} rel="no-follow" download>Download <AiOutlineDownload className= 'downloadImg' /></a>
+        <a className='downloadBtn' href={`${download}&force=true`} rel="no-follow" download><AiOutlineDownload className= 'downloadImg' /></a>
 
         <button onClick={handleLike} className='likeBtn'>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid" width="100%" height='100%' outline="0" style={{margin: "auto", background: "rgb(255, 255, 255)", display: "block", borderBlock: "white", borderBlockColor: "white"}}>

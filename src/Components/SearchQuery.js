@@ -4,7 +4,7 @@ import { createApi } from 'unsplash-js';
 import RenderPhotos from "./RenderPhotos";
 import loader from '../Imgs/Infinity-0.9s-200px.svg';
 import InfiniteScroll from 'react-infinite-scroller';
-import '../Styles/SearchQuery.scss'
+import '../Styles/SearchQuery.scss';
 
 
 
@@ -27,7 +27,7 @@ const SearchQuery = () => {
     await unsplash.search.getPhotos({
       query: `${queryInput}`,
       page: page,
-      perPage: 4,
+      perPage: 6,
       lang: 'en',
       orderBy: 'relevant'  
     }

@@ -1,24 +1,33 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../Styles/Photo.scss';
 import { AiOutlineDownload } from 'react-icons/ai';
 
-export let likedPhotos = [];
+
+export let LikedPhotos = [];
 
 
 export const Photo = ({photo, index}) => {
 
   const {urls: {raw}, alt_description, links: {download}} = photo
-  const [like, setLike] = useState(false)
-  // const [likedPhotos, setLikedPhotos] = useState([])
+  const [like, setLike] = useState(false);
+
+
+  const ToLikedPhotos = () => {
+   
+    if (like) {
+      LikedPhotos.push(photo);
+      console.log(LikedPhotos);
+    } else if (LikedPhotos.includes(photo)) {
+      LikedPhotos =  LikedPhotos.filter(arg => arg !== photo)      
+    }
+  }
+
+  useEffect(() => {
+    ToLikedPhotos()
+  })
 
   const handleLike = () => {
-    setLike(!like);
-    // if (like) {
-    //   likedPhotos = likedPhotos.push(photo);
-    // }
-
-    // return likedPhotos
-    // setLikedPhotos([...likedPhotos, photo])
+    setLike((like) => (!like));
   }
 
 
@@ -48,4 +57,3 @@ export const Photo = ({photo, index}) => {
   )
 }
 
-// export default Photo;

@@ -5,6 +5,8 @@ import RenderPhotos from "./RenderPhotos";
 import loader from '../Imgs/Infinity-0.9s-200px.svg';
 import InfiniteScroll from 'react-infinite-scroller';
 import '../Styles/SearchQuery.scss';
+import { Link } from 'react-router-dom';
+import Logo from './Logo'
 
 
 
@@ -83,11 +85,13 @@ const SearchQuery = () => {
   return (
 
     <div >
+      
       <div id='header'>
-        <div id='logo'>
-          <h1>Optigram</h1>
-        </div>
+        <Logo />
 
+        <Link to='/liked'>
+          <div>Liked Photos</div>
+        </Link>
 
         <div className='queryInput'>
           <input 
@@ -100,11 +104,8 @@ const SearchQuery = () => {
           <button onClick={handleSubmit}>Search</button>
         </div>
       </div>
-      
-
    
       {queryError?<div id='inputError'>{queryError}</div>:null}
-     
 
       <div id='allPics'>
 

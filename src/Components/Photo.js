@@ -1,34 +1,35 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../Styles/Photo.scss';
 import { AiOutlineDownload } from 'react-icons/ai';
+// import { LikedPhotos } from './RenderPhotos';
 
 
-// export let LikedPhotos = [];
+export let LikedPhotos = []
 
-
-export const Photo = ({changeLike, like, photo, index, likedPhoto}) => {
+export const Photo = ({like, photo, index}) => {
 
   const {urls: {raw}, alt_description, links: {download}} = photo
   let [liked, setLiked] = useState(like);
-  
-
 
   const ToLikedPhotos = () => {
-    likedPhoto(photo)
+
+    if (LikedPhotos.includes(photo) || liked) {
+      LikedPhotos = LikedPhotos.filter(each => each !== photo)
+      console.log('REMOVE FROM LIKEDDDDD', LikedPhotos);
+    } else {
+      LikedPhotos = [...LikedPhotos, photo]
+      console.log('ADDED TO LIKEDDDDD', LikedPhotos);
+    }
   }
 
 
   const handleLike = () => {
-    changeLike()
-    setLiked((like) => (!like))
-    ToLikedPhotos()
+
+    // changeLike()
+    setLiked((liked) => (!liked))
+    ToLikedPhotos(photo)
   }
-  console.log("PERSONAL PROP",photo.alt_description, like);
-
-  // useEffect(() => {
-  //   console.log('LIKE PROP',photo.alt_description, like);
-  // }, [like])
-
+  
 
 
   return (

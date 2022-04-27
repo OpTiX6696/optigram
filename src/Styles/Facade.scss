@@ -1,1 +1,59 @@
 // Incoming! 
+@import url('https://fonts.googleapis.com/css2?family=Alice&family=Beau+Rivage&family=Cinzel:wght@400;500;600&family=Courgette&family=Forum&family=Great+Vibes&family=Pacifico&family=Satisfy&display=swap');
+
+div.facade {
+  height: 100vh;
+  max-height: 1080px;
+
+    div.handwriting {
+      // border: 2px solid red;
+      margin: 0 auto;
+      // width: 75vw;
+      transition: all 1s ease;
+      transition-delay: 0.5ss;
+      height: max-content;
+      max-height: 400px;
+      max-width: 1040px;
+      margin-bottom: 40px;
+      // display: flex;
+      // justify-content: center;
+      // align-items: center;
+      // flex-wrap: wrap;
+      overflow: hidden;
+    
+      svg {
+        // border: 2px solid blue;
+    
+        .text {
+          text-align: center;
+          stroke-dasharray: 2800;
+          stroke-dashoffset: 2800;
+          animation: animate 3s linear forwards;
+        }
+      }
+    }
+
+    div.texts {
+      border: 2px solid red;
+      font-family: 'Courgette';
+      color: rgb(70, 182, 247);
+      margin-bottom: 80px;
+
+
+      p {
+        font-size: 200%;
+      }
+    }
+    
+}
+
+
+@keyframes animate {
+
+  to {
+    stroke-dashoffset: 0;
+    // stroke-dasharray: 0;
+  }
+
+  
+}

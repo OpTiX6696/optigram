@@ -3,23 +3,19 @@
 
 div.facade {
   height: 100vh;
-  max-height: 1080px;
+  overflow: hidden;
+  // position: relative;
+  // max-height: 1080px;
 
     div.handwriting {
       // border: 2px solid red;
-      margin: 0 auto;
-      // width: 75vw;
-      transition: all 1s ease;
+      margin: 25% auto 0;
+      // transition: all 1s ease;
       transition-delay: 0.5ss;
-      height: max-content;
-      max-height: 400px;
+      height: 12%;
+      width: 100%;
       max-width: 1040px;
-      margin-bottom: 40px;
-      // display: flex;
-      // justify-content: center;
-      // align-items: center;
-      // flex-wrap: wrap;
-      overflow: hidden;
+      
     
       svg {
         // border: 2px solid blue;
@@ -34,14 +30,42 @@ div.facade {
     }
 
     div.texts {
-      border: 2px solid red;
-      font-family: 'Courgette';
-      color: rgb(70, 182, 247);
-      margin-bottom: 80px;
-
+      // border: 2px solid green;
+      font-family: 'Forum';
+      color: transparentize($color: #16b7f8, $amount: 1) ;
+      margin: 50px auto 80px;
+      transform: translate(50vh);
+      animation: text-animate 0.5s linear 2.5s  forwards;
 
       p {
-        font-size: 200%;
+        font-size: 150%;
+        margin-bottom: 10px;
+        font-weight: 600;
+        letter-spacing: 1px;
+      }
+    }
+
+    a.getStarted {
+      border: 1px solid #16b7f8;
+      // margin: 0 auto;
+      border-radius: 5px;
+      background-color: #16b7f8;
+      color: white;
+      text-decoration: none;
+      padding: 7px 12px;
+      font-size: 1.3rem;
+      font-family: 'Forum', cursive;
+      font-weight: 900;
+      letter-spacing: 1.5px;
+      // transition: all 0.5s ease;
+      transform: translateX(50vh);
+      animation: btn-animate 0.5s linear 2.5s  forwards;
+
+      &:hover {
+        background-color: white;
+        color: #16b7f8;
+        transition: all 0.5s ease;
+
       }
     }
     
@@ -49,11 +73,48 @@ div.facade {
 
 
 @keyframes animate {
-
   to {
     stroke-dashoffset: 0;
     // stroke-dasharray: 0;
   }
+}
 
+
+@keyframes text-animate {
+
+  from {
+    transform: translate(50vh);
+    color: transparentize($color: #16b7f8, $amount: 1) ;
+
+  }
+  to {
+    transform: translate(0);
+    color: transparentize($color: #16b7f8, $amount: 0) ;
+
+  }
   
 }
+
+@keyframes btn-animate {
+
+  from {
+    transform: translate(50vh);
+  }
+  to {
+    transform: translate(0);
+  }
+  
+}
+
+
+
+
+// @media screen and (max-width: 600px) {
+  
+//   div.handwriting {
+//     height: 120px;
+//   }
+  
+  
+    
+// }

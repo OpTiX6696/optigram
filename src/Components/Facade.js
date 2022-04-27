@@ -25,12 +25,13 @@ const Facade = () => {
         </svg>
       </div>
       <div className='texts'>
-        <p>Search an item</p>
-        <p>I'll splash the pictures.</p>
+        <p>Search an item, I'll splash the pictures.</p>
+        {/* <p>I'll splash the pictures.</p> */}
       </div>
       
-
-      <Link to='/search' className='getStarted'>Get Started</Link>
+      <div className='getStarted'>
+        <Link to='/search'>Get Started</Link>
+      </div>
     </div>
   )
 }

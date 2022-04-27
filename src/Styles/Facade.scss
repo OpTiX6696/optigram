@@ -9,8 +9,7 @@ div.facade {
 
     div.handwriting {
       // border: 2px solid red;
-      margin: 25% auto 0;
-      // transition: all 1s ease;
+      margin: 30% auto 0;
       transition-delay: 0.5ss;
       height: 12%;
       width: 100%;
@@ -33,7 +32,7 @@ div.facade {
       // border: 2px solid green;
       font-family: 'Forum';
       color: transparentize($color: #16b7f8, $amount: 1) ;
-      margin: 50px auto 80px;
+      margin: 30px auto 50px;
       transform: translate(50vh);
       animation: text-animate 0.5s linear 2.5s  forwards;
 
@@ -45,29 +44,45 @@ div.facade {
       }
     }
 
-    a.getStarted {
-      border: 1px solid #16b7f8;
-      // margin: 0 auto;
-      border-radius: 5px;
-      background-color: #16b7f8;
-      color: white;
-      text-decoration: none;
-      padding: 7px 12px;
-      font-size: 1.3rem;
-      font-family: 'Forum', cursive;
-      font-weight: 900;
-      letter-spacing: 1.5px;
-      // transition: all 0.5s ease;
-      transform: translateX(50vh);
+    div.getStarted {
+      // border: 2px solid red;
+      position: relative;
+      padding: 0;
+      height: 40px;
+      width: max-content;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      // flex-wrap: wrap;
+      transform: translateX(-80vw);
       animation: btn-animate 0.5s linear 2.5s  forwards;
 
-      &:hover {
-        background-color: white;
-        color: #16b7f8;
-        transition: all 0.5s ease;
-
+      a {
+        border: 1px solid #16b7f8;
+        margin: 0 auto;
+        border-radius: 5px;
+        background-color: #16b7f8;
+        color: white;
+        text-decoration: none;
+        padding: 7px 12px;
+        font-size: 1.3rem;
+        font-family: 'Forum', cursive;
+        font-weight: 900;
+        letter-spacing: 1.5px;
+        width: max-content;
+        
+        position: absolute;
+  
+        &:hover {
+          background-color: white;
+          color: #16b7f8;
+          transition: all 0.5s ease;
+  
+        }
       }
     }
+    
     
 }
 
@@ -98,7 +113,7 @@ div.facade {
 @keyframes btn-animate {
 
   from {
-    transform: translate(50vh);
+    transform: translate(-80vw);
   }
   to {
     transform: translate(0);

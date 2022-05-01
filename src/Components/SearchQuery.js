@@ -119,10 +119,10 @@ const SearchQuery = () => {
       
 
       <div id='allPics'>
-        {<div id='skeletonWrapper'>{
+        {/* {<div id='skeletonWrapper'>{
             [1,2,3,4,5,6,7,8].map(each => <Skeleton key={each} />)
           }
-          </div>}
+          </div>} */}
 
           {loading && (<div id='skeletonWrapper'>{
             [1,2,3,4,5,6,7,8].map(each => <Skeleton key={each} />)

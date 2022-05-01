@@ -6,6 +6,9 @@ div.skeleton {
   max-width: 600px;
   box-shadow: 0.1px 0.2px 7px 0.1px #16b8f83a;
   border-radius: 7px;
+  position: relative;
+  overflow: hidden;
+
   // padding: 5px;
   // margin: 10px;
 
@@ -49,11 +52,52 @@ div.skeleton {
 
 
     div.btn {
-      background-color: #16b8f83a;
       width: 50px;
       height: 50px;
-      color: inherit;
       text-decoration: none;
     }
+
+    div.likeBtn {
+      background-color: rgba(255, 0, 0, 0.151);
+    }
+    div.downloadBtn {
+      background-color: #16b8f82d;
+    }
   }
+}
+
+div.shimmerWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  animation: loading 2s infinite;  
+}
+
+div.shimmer {
+  width: 40%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: skewX(-20deg);
+
+}
+
+@keyframes loading {
+  0% {
+    transform: translateX(-140%);
+
+  }
+  50% {
+    transform: translateX(-70%);
+
+
+  }
+  100% {
+    transform: translateX(140%);
+
+
+  }
+  
+  
 }

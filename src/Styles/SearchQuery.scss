@@ -1,12 +1,14 @@
-// @import url('https://fonts.googleapis.com/css2?family=Beau+Rivage&display=swap');
+
 @import url('https://fonts.googleapis.com/css2?family=Alice&family=Beau+Rivage&family=Cinzel:wght@400;500;600&family=Courgette&family=Forum&family=Great+Vibes&family=Pacifico&family=Satisfy&display=swap');
+
+
 #header {
   // border: 2px solid red;
   display: flex;
   // flex-wrap: wrap;
   justify-content: space-between;
   padding: 7px 5%;
-  background-color: white;
+  background-color: transparent;
   color: #16b7f8;
   position: fixed;
   top: 0;
@@ -62,6 +64,18 @@ div#inputError {
   font-size: larger;
 }
 
+div#skeletonWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 70px;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding-bottom: 40px;
+
+}
+
 @media screen and (max-width: 600px) {
   #header {
     padding: 3px 2%;
@@ -69,9 +83,6 @@ div#inputError {
     div.queryInput {
       gap: 10px;
 
-      // input#searchQuery {
-      //   // width: 150px;
-      // }
       button {
         padding: 2px 7px;
         font-size: smaller;
@@ -80,4 +91,10 @@ div#inputError {
     }
 
   }
+
+  // div#skeletonWrapper {
+  //   flex-direction: column;
+  //   gap: 35px;
+    
+  // }
 }

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import { Credentials } from "./Credentials";
 import { createApi } from 'unsplash-js';
 import RenderPhotos from "./RenderPhotos";
@@ -6,7 +6,8 @@ import loader from '../Imgs/Infinity-0.9s-200px.svg';
 import InfiniteScroll from 'react-infinite-scroller';
 import '../Styles/SearchQuery.scss';
 import { Link } from 'react-router-dom';
-import Logo from './Logo'
+import Logo from './Logo';
+import Skeleton from './Skeleton';
 
 
 
@@ -17,6 +18,7 @@ const SearchQuery = () => {
   const [queryError, setQueryError] = useState();
   const [photos, setPhotos] = useState();
   const [page, setPage] = useState(1);
+  const [loading, setLoading] = useState(undefined)
 
   
   const getPhotos = async () => {
@@ -57,17 +59,23 @@ const SearchQuery = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     if (!queryInput) {
       setQueryError('Enter a valid query')
     } else {
       setQueryError('')
+      setLoading(true)
       const newPhotos = await getPhotos()
       // console.log("ON SUBMIT", newPhotos);
+      setLoading(false)
       setPhotos(newPhotos);
     }
 
   }
+  useEffect(() => {
+    if (loading) {
+      setPhotos(null)
+    }
+  }, [photos, loading])
 
   const getMorePhotos = async () => {
     const morePhotos = await getPhotos()
@@ -104,11 +112,25 @@ const SearchQuery = () => {
           <button onClick={handleSubmit}>Search</button>
         </div>
       </div>
+
    
       {queryError?<div id='inputError'>{queryError}</div>:null}
 
-      <div id='allPics'>
+      
 
+      <div id='allPics'>
+        {<div id='skeletonWrapper'>{
+            [1,2,3,4,5,6,7,8].map(each => <Skeleton key={each} />)
+          }
+          </div>}
+
+          {loading && (<div id='skeletonWrapper'>{
+            [1,2,3,4,5,6,7,8].map(each => <Skeleton key={each} />)
+          }
+          </div>)}
+
+
+          
         {photos ? (
           <InfiniteScroll
           pageStart={0}
@@ -121,6 +143,8 @@ const SearchQuery = () => {
           </InfiniteScroll>
           ) : null
         }
+
+        
       </div>
         
     </div>

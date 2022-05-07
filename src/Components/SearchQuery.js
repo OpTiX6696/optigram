@@ -15,6 +15,7 @@ const SearchQuery = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
     if (!queryInput) {
       setQueryError('Enter a valid query')
     } else {
@@ -24,7 +25,9 @@ const SearchQuery = () => {
       // console.log("ON SUBMIT", newPhotos);
       setLoading(false)
       setPhotos(newPhotos);
+      // setQueryInput('')
     }
+    // setQueryInput('')
 
   }
   
@@ -61,11 +64,11 @@ const SearchQuery = () => {
           <input 
           type='text' 
           id='searchQuery' 
-          // value={queryInput} 
+          value={queryInput} 
           name='searchQuery' 
           onChange={handleChange}
           />
-          <button onClick={handleSubmit}>Search</button>
+          <button type='submit' onClick={handleSubmit}>Search</button>
         </div>
       </div>
 

@@ -26,7 +26,7 @@ const BaseLayout = () => {
     await unsplash.search.getPhotos({
       query: `${queryInput}`,
       page: page,
-      perPage: 3,
+      perPage: 6,
       lang: 'en',
       orderBy: 'relevant'  
     }

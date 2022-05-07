@@ -8,7 +8,7 @@
   // flex-wrap: wrap;
   justify-content: space-between;
   padding: 7px 5%;
-  background-color: transparent;
+  background-color: white;
   color: #16b7f8;
   position: fixed;
   top: 0;
@@ -16,6 +16,8 @@
   width: 100%;
   border-bottom: 1px solid #16b7f8;
   z-index: 2;
+  box-shadow: 0.1px 0.2px 7px 0.1px #16b8f83a;
+
 
   div.queryInput {
     // border: 2px solid green;

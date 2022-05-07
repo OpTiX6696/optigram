@@ -1,26 +1,24 @@
-import React, { createContext, useContext, useState } from "react";
-import '../Styles/RenderPhotos.scss'
-import { Photo } from './Photo'
-
-//  export let LikedPhotos = []
+import React from "react";
+import '../Styles/RenderPhotos.scss';
+import { Photo } from './Photo';
 
 
 const RenderPhotos = (props) => {
 
   const photos = props.newPhotos;
+  const likedPhotos = props.likedPhotos;
+  const setLikedPhotos = props.setLikedPhotos;
 
   return (
     <div id="container">
-      {/* To render pics */}
        {photos && photos.map((photo, index) => {
-        return <Photo photo={photo} index={index} />        
+         const isLiked = likedPhotos.find((each) => each.id === photo.id)
+        return <Photo photo={photo} index={index} like={isLiked} setLikedPhotos = {setLikedPhotos} />        
       }
       )}
     </div>
   )
 }
-
-// console.log('LLLLIIIIIKKKKEEEDDD', liked);
 
 
 export default RenderPhotos

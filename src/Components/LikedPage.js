@@ -1,23 +1,22 @@
-import React, { useEffect, useRef, useState} from "react";
-import RenderPhotos from "./RenderPhotos";
+import React from "react";
 import { Photo } from "./Photo";
-import { LikedPhotos } from "./Photo";
+import { useOutletContext } from "react-router-dom";
 
 
 const LikedPage = () => {
 
-  const [currentLikedPhotos, setCurrentLikedPhotos] = useState(LikedPhotos);
+  const {likedPhotos, setLikedPhotos} = useOutletContext();
 
-  
-
-  console.log(currentLikedPhotos);
   return (
-    // <Photo newPhotos={LikedPhotos} />
+
 
     <div id="container">
+
       LIKED PICTURES
-       {currentLikedPhotos && currentLikedPhotos.map((photo, index) => {
-        return <Photo like={true} photo={photo} index={index} />        
+       {likedPhotos.map((photo, index) => {
+        // const isLiked = likedPhotos.find((each) => each.id === photo.id)
+
+        return <Photo setLikedPhotos={setLikedPhotos} like={true} photo={photo} index={index} />        
       }
       // changeLike={changeLikeProp}
       )}

@@ -1,61 +1,17 @@
-import React, {useEffect, useState} from 'react';
-import { Credentials } from "./Credentials";
-import { createApi } from 'unsplash-js';
+import React, {useEffect} from 'react';
 import RenderPhotos from "./RenderPhotos";
 import loader from '../Imgs/Infinity-0.9s-200px.svg';
 import InfiniteScroll from 'react-infinite-scroller';
 import '../Styles/SearchQuery.scss';
-import { Link } from 'react-router-dom';
+import { Link, useOutletContext } from 'react-router-dom';
 import Logo from './Logo';
 import Skeleton from './Skeleton';
 
 
-
-
 const SearchQuery = () => {
 
-  const [queryInput, setQueryInput] = useState();
-  const [queryError, setQueryError] = useState();
-  const [photos, setPhotos] = useState();
-  const [page, setPage] = useState(1);
-  const [loading, setLoading] = useState(undefined)
+  const {queryInput, setQueryInput, queryError, setQueryError, photos, setPhotos, loading, setLoading, getPhotos, likedPhotos, setLikedPhotos} = useOutletContext()
 
-  
-  const getPhotos = async () => {
-    const unsplash = createApi({
-      accessKey: Credentials.accessKey
-      // `fetch` options to be sent with every request
-      // headers: { 'X-Custom-Header': 'foo' },
-    });
-    let fetchedPhotos = null
-    await unsplash.search.getPhotos({
-      query: `${queryInput}`,
-      page: page,
-      perPage: 6,
-      lang: 'en',
-      orderBy: 'relevant'  
-    }
-      // `fetch` options to be sent only with _this_ request
-      // { headers: { 'X-Custom-Header-2': 'bar' } },
-    )
-    .then(res => {
-      if (res.errors) {
-        console.log(`error occurred: ', ${res.errors}`);
-      } else {
-        const allPhotos = res.response.results;
-        if (allPhotos.length === 0) {
-          setQueryError("Invalid query parameter")
-        } else {
-          setPage((page) => (page + 1));
-          // console.log("ALL PHOTOS", allPhotos)
-          fetchedPhotos = [...allPhotos]          
-        }
-      }
-    })
-
-    return fetchedPhotos
-
-  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -71,15 +27,15 @@ const SearchQuery = () => {
     }
 
   }
+  
   useEffect(() => {
     if (loading) {
       setPhotos(null)
     }
-  }, [photos, loading])
+  }, [setPhotos, loading])
 
   const getMorePhotos = async () => {
-    const morePhotos = await getPhotos()
-    // console.log(`MORE PICS ${morePhotos}`);
+    const morePhotos = await getPhotos();
     setPhotos((existingPhotos) => [...existingPhotos, ...morePhotos])
   }
 
@@ -92,7 +48,7 @@ const SearchQuery = () => {
 
   return (
 
-    <div >
+    <div>
       
       <div id='header'>
         <Logo />
@@ -119,10 +75,6 @@ const SearchQuery = () => {
       
 
       <div id='allPics'>
-        {/* {<div id='skeletonWrapper'>{
-            [1,2,3,4,5,6,7,8].map(each => <Skeleton key={each} />)
-          }
-          </div>} */}
 
           {loading && (<div id='skeletonWrapper'>{
             [1,2,3,4,5,6,7,8].map(each => <Skeleton key={each} />)
@@ -139,7 +91,7 @@ const SearchQuery = () => {
           threshold={0.1*window.screen.height}
           loader={<div id='loader'><img alt='' src={loader} /></div>}
           >
-            {<RenderPhotos newPhotos = {photos} />}
+            {<RenderPhotos newPhotos = {photos} likedPhotos={likedPhotos} setLikedPhotos={setLikedPhotos}/>}
           </InfiniteScroll>
           ) : null
         }

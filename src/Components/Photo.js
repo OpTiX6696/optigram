@@ -6,7 +6,7 @@ import { AiOutlineDownload } from 'react-icons/ai';
 
 export const Photo = ({like, photo, index, setLikedPhotos}) => {
 
-  const {urls: {raw}, alt_description, links: {download}} = photo;
+  const {urls: {raw, regular}, alt_description, links: {download}} = photo;
 
 
   const handleLike = () => {
@@ -29,7 +29,7 @@ export const Photo = ({like, photo, index, setLikedPhotos}) => {
   return (
     <div key={index} className='photoContainer'>
       <div className="photo">
-        <img alt="" src={raw} />
+        <img alt="" src={regular} />
       </div>
       <div className="photoTitle">
         {alt_description ? <p>{alt_description}</p> : <p>Description Unavailable</p>}

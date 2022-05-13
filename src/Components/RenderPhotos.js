@@ -8,6 +8,7 @@ const RenderPhotos = (props) => {
   const photos = props.newPhotos;
   const likedPhotos = props.likedPhotos;
   const setLikedPhotos = props.setLikedPhotos;
+  console.log(photos[1]);
 
   return (
     <div id="container">

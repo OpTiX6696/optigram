@@ -1,6 +1,9 @@
 import React from "react";
 import { Photo } from "./Photo";
 import { useOutletContext } from "react-router-dom";
+import Logo from "./Logo";
+import { Link } from 'react-router-dom';
+
 
 
 const LikedPage = () => {
@@ -12,7 +15,15 @@ const LikedPage = () => {
 
     <div id="container">
 
-      LIKED PICTURES
+<div id='header'>
+        <Logo />
+
+        <Link className='back' to='/search'>
+        Back
+        </Link>
+      </div>
+
+      {/* LIKED PICTURES */}
        {likedPhotos.map((photo, index) => {
         // const isLiked = likedPhotos.find((each) => each.id === photo.id)
 

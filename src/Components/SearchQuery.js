@@ -56,20 +56,22 @@ const SearchQuery = () => {
       <div id='header'>
         <Logo />
 
-        <Link to='/liked'>
-          <div>Liked Photos</div>
-        </Link>
+        
 
         <div className='queryInput'>
           <input 
           type='text' 
           id='searchQuery' 
-          value={queryInput} 
+          // value={queryInput} 
           name='searchQuery' 
           onChange={handleChange}
           />
           <button type='submit' onClick={handleSubmit}>Search</button>
         </div>
+
+        <Link className='liked' to='/liked'>
+        Liked Photos
+        </Link>
       </div>
 
    

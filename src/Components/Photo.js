@@ -12,14 +12,23 @@ export const Photo = ({like, photo, index, setLikedPhotos}) => {
   const handleLike = () => {
 
 
-    setLikedPhotos(likedPhoto => {
+    setLikedPhotos(likedPhotos => {
 
-      const isPhotoLiked = likedPhoto.find(e => e.id === photo.id)
+      const isPhotoLiked = likedPhotos.find(e => e.id === photo.id)
 
       if (isPhotoLiked) {
-        return likedPhoto.filter(e => e.id !== photo.id)
+        const newLikedPhotos = likedPhotos.filter(e => e.id !== photo.id)
+        localStorage.setItem("likedPhotos", JSON.stringify(newLikedPhotos))
+        console.log("from LS", JSON.parse(localStorage.getItem("likedPhotos")));
+
+        return newLikedPhotos
       } else {
-        return [...likedPhoto, photo]
+        const newLikedPhotos = [...likedPhotos, photo]
+        localStorage.setItem("likedPhotos", JSON.stringify(newLikedPhotos))
+
+        console.log("from LS", JSON.parse(localStorage.getItem("likedPhotos")));
+
+        return newLikedPhotos
       }
     })
   }

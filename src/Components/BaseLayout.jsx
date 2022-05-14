@@ -13,8 +13,12 @@ const BaseLayout = () => {
   const [photos, setPhotos] = useState();
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
-  const [likedPhotos, setLikedPhotos] = useState([])
+  const [likedPhotos, setLikedPhotos] = useState(localStorage.getItem("likedPhotos") ? JSON.parse(localStorage.getItem("likedPhotos")) : [])
 
+  // console.log(localStorage.getItem("likedPhotos"))
+  
+
+  // JSON.parse(localStorage.getItem("likedPhotos"))
   
   const getPhotos = async () => {
     const unsplash = createApi({
@@ -35,7 +39,8 @@ const BaseLayout = () => {
     )
     .then(res => {
       if (res.errors) {
-        console.log(`error occurred: ', ${res.errors}`);
+        setQueryError("Seems there's a problem with your network")
+        // console.log(`error occurred: ', ${res.errors}`);
       } else {
         const allPhotos = res.response.results;
         if (allPhotos.length === 0) {

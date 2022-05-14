@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Alice&family=Beau+Rivage&family=Cinzel:wght@400;500;600&family=Courgette&family=Forum&family=Great+Vibes&family=Pacifico&family=Satisfy&display=swap');
+
+
+
+div#footer {
+  // border: 2px solid red;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  padding: 7px 0;
+  background-color: white;
+  color: #16b8f8;
+  font-family: 'Courgette', cursive;
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
+}

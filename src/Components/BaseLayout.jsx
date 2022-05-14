@@ -3,6 +3,7 @@ import { Credentials } from "./Credentials";
 import { createApi } from 'unsplash-js';
 import '../Styles/SearchQuery.scss';
 import { Outlet } from 'react-router-dom';
+import Footer from './Footer';
 
 
 
@@ -63,6 +64,8 @@ const BaseLayout = () => {
   return (
     <div>
       <Outlet context={{queryInput, setQueryInput, queryError, setQueryError, photos, setPhotos, loading, setLoading, getPhotos, likedPhotos, setLikedPhotos}} />
+
+      <Footer />
     </div>
   )
 }

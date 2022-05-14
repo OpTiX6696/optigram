@@ -47,7 +47,7 @@
     button {
       font-family: inherit;
       padding: 5px 12px;
-      font-size: inherit;
+      font-size: 1.2rem;
       letter-spacing: 1px;
       background-color: transparent;
       border: none;
@@ -101,7 +101,7 @@ div#skeletonWrapper {
 
 @media screen and (max-width: 600px) {
   #header {
-    padding: 3px 0.2%;
+    padding: 3px 2%;
 
     div.queryInput {
       gap: 10px;
@@ -109,7 +109,6 @@ div#skeletonWrapper {
 
       button {
         padding: 2px 7px;
-        font-size: smaller;
       }
 
     }

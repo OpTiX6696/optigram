@@ -39,7 +39,19 @@ const SearchQuery = () => {
 
   const getMorePhotos = async () => {
     const morePhotos = await getPhotos();
-    setPhotos((existingPhotos) => [...existingPhotos, ...morePhotos])
+
+    const photoExists = (aPhoto) => {
+      return photos.find(e => e.id === aPhoto.id)
+    }
+
+    morePhotos.map(e => {
+      if (!photoExists(e)) {
+        setPhotos(existingPhotos => [...existingPhotos, e])
+      }
+      return null
+    })
+
+    // setPhotos((existingPhotos) => [...existingPhotos, ...morePhotos])
   }
 
   const handleChange = (e) => {

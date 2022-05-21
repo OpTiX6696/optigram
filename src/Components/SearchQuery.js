@@ -20,16 +20,16 @@ const SearchQuery = () => {
       setQueryError('Enter a valid query')
     } else {
       setQueryError('')
-      setLoading(true)
+      setLoading(true);
       const newPhotos = await getPhotos()
-      // console.log("ON SUBMIT", newPhotos);
       setLoading(false)
       setPhotos(newPhotos);
       // setQueryInput('')
     }
-    // setQueryInput('')
+    // document.getElementById('searchQuery').value = "";
 
   }
+
   
   useEffect(() => {
     if (loading) {
@@ -50,12 +50,16 @@ const SearchQuery = () => {
       }
       return null
     })
-
-    // setPhotos((existingPhotos) => [...existingPhotos, ...morePhotos])
   }
 
   const handleChange = (e) => {
+    // setQueryInput();
+
     setQueryInput(e.target.value);
+  }
+
+  const handleFocus = (e) => {
+    setQueryInput('')
   }
 
 
@@ -74,9 +78,10 @@ const SearchQuery = () => {
           <input 
           type='text' 
           id='searchQuery' 
-          // value={queryInput} 
+          value={queryInput} 
           name='searchQuery' 
           onChange={handleChange}
+          onFocus={handleFocus}
           />
           <button type='submit' onClick={handleSubmit}>Search</button>
         </div>
@@ -87,7 +92,7 @@ const SearchQuery = () => {
       </div>
 
    
-      {queryError?<div id='inputError'>{queryError}</div>:null}
+      {queryError && !loading ?<div id='inputError'>{queryError}</div>:null}
 
       
 

@@ -14,7 +14,7 @@ const RenderPhotos = (props) => {
     <div id="container">
        {photos && photos.map((photo, index) => {
          const isLiked = likedPhotos.find((each) => each.id === photo.id)
-        return <Photo photo={photo} index={index} like={isLiked} setLikedPhotos = {setLikedPhotos} />        
+        return <Photo photo={photo} key={index} like={isLiked} setLikedPhotos = {setLikedPhotos} />        
       }
       )}
     </div>

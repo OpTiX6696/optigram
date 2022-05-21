@@ -37,7 +37,7 @@ const BaseLayout = () => {
 
       if (res.errors) {
         setQueryError("Seems there's a problem with your network")
-        // console.log(`error occurred: ', ${res.errors}`);
+        console.log(`error occurred: ', ${res.errors}`);
       } else {
         const allPhotos = res.response.results;
         if (allPhotos.length === 0) {
@@ -51,6 +51,11 @@ const BaseLayout = () => {
         }
       }
     })
+    .catch(err => {
+      console.log("Fetch Error", err)
+      setQueryError("Seems there's a problem with your network")
+
+    } )
 
     return fetchedPhotos
 

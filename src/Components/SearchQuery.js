@@ -15,6 +15,7 @@ const SearchQuery = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     
     if (!queryInput) {
       setQueryError('Enter a valid query')
@@ -53,16 +54,12 @@ const SearchQuery = () => {
   }
 
   const handleChange = (e) => {
-    // setQueryInput();
-
     setQueryInput(e.target.value);
   }
 
   const handleFocus = (e) => {
     setQueryInput('')
   }
-
-
 
 
   return (
@@ -98,19 +95,17 @@ const SearchQuery = () => {
 
       <div id='allPics'>
 
-          {loading && (<div id='skeletonWrapper'>{
-            [1,2,3,4,5,6,7,8].map(each => <Skeleton key={each} />)
-          }
-          </div>)}
-
-
+        {loading && (<div id='skeletonWrapper'>{
+          [1,2,3,4,5,6,7,8].map(each => <Skeleton key={each} />)
+        }
+        </div>)}
           
         {photos ? (
           <InfiniteScroll
           pageStart={0}
           loadMore={getMorePhotos}
           hasMore={true || false}
-          threshold={0.1*window.screen.height}
+          threshold={0.2*window.screen.height}
           loader={<div id='loader'><img alt='' src={loader} /></div>}
           >
             {<RenderPhotos newPhotos = {photos} likedPhotos={likedPhotos} setLikedPhotos={setLikedPhotos}/>}

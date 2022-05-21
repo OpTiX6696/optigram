@@ -22,14 +22,10 @@ const LikedPage = () => {
         Back
         </Link>
       </div>
-
-      {/* LIKED PICTURES */}
        {likedPhotos.map((photo, index) => {
-        // const isLiked = likedPhotos.find((each) => each.id === photo.id)
 
         return <Photo setLikedPhotos={setLikedPhotos} like={true} photo={photo} index={index} />        
       }
-      // changeLike={changeLikeProp}
       )}
     </div>
   )

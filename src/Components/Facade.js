@@ -26,7 +26,6 @@ const Facade = () => {
       </div>
       <div className='texts'>
         <p>Search an item, I'll splash the pictures.</p>
-        {/* <p>I'll splash the pictures.</p> */}
       </div>
       
       <div className='getStarted'>

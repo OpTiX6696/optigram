@@ -1,6 +1,4 @@
 import React from "react";
-// import Skeleton from "./Skeleton";
-
 
 
 const Shimmer = () => {
@@ -10,7 +8,6 @@ const Shimmer = () => {
       <div className="shimmer">
 
       </div>
-
     </div>
   )
 } 

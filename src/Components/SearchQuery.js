@@ -15,7 +15,6 @@ const SearchQuery = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     
     if (!queryInput) {
       setQueryError('Enter a valid query')
@@ -25,9 +24,7 @@ const SearchQuery = () => {
       const newPhotos = await getPhotos()
       setLoading(false)
       setPhotos(newPhotos);
-      // setQueryInput('')
     }
-    // document.getElementById('searchQuery').value = "";
 
   }
 
@@ -112,7 +109,6 @@ const SearchQuery = () => {
           </InfiniteScroll>
           ) : null
         }
-
         
       </div>
         

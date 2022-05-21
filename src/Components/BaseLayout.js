@@ -15,11 +15,6 @@ const BaseLayout = () => {
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
   const [likedPhotos, setLikedPhotos] = useState(localStorage.getItem("likedPhotos") ? JSON.parse(localStorage.getItem("likedPhotos")) : [])
-
-  // console.log(localStorage.getItem("likedPhotos"))
-  
-
-  // JSON.parse(localStorage.getItem("likedPhotos"))
   
   const getPhotos = async () => {
     const unsplash = createApi({

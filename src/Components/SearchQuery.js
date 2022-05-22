@@ -15,6 +15,7 @@ const SearchQuery = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    // setPhotos([]);
     
     if (!queryInput) {
       setQueryError('Enter a valid query')
@@ -29,7 +30,7 @@ const SearchQuery = () => {
   }
 
   const Infinityloader = () => {
-    if (photos) {
+    if (photos.length > 0) {
       return loader
     } else {
       return null
@@ -115,7 +116,7 @@ const SearchQuery = () => {
           loadMore={getMorePhotos}
           hasMore={true || false}
           threshold={0.1*window.screen.height}
-          loader={<div id='loader'><img alt='' src={Infinityloader} /></div>}
+          loader={<div id='loader'><img alt='' src={Infinityloader()} /></div>}
           >
             {<RenderPhotos newPhotos = {photos} likedPhotos={likedPhotos} setLikedPhotos={setLikedPhotos}/>}
           </InfiniteScroll>

@@ -42,20 +42,21 @@ const BaseLayout = () => {
           setLoading(false);
         } else {
           setPage((page) => (page + 1));
-          fetchedPhotos = [...allPhotos]          
+          fetchedPhotos = [...allPhotos]
         }
+
       // }
     })
     .catch(err => {
 
       if (err.message === "expected JSON response from server.") {
         console.log("Fetch Error", err.message);
-        if (photos.length > 0) {
+        if (photos && (photos.length > 0 )) {
           console.log("End of page");
         } else {
-          setQueryError("Query unavailable. Either check you spelling or use a similar word.")
+          setQueryError("Query unavailable. Either check you spelling, use a similar word or refresh and try again")
         }
-      } else if (err.message === "Failed to fetch") {
+      } else if (err.message === "Failed to fetch" && photos.length === 0) {
         console.log("Fetch Error", err.message)
         setQueryError("Unable to fetch. Either check network connection or refresh and try again.")
       }

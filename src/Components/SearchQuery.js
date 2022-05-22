@@ -69,15 +69,17 @@ const SearchQuery = () => {
         
 
         <div className='queryInput'>
-          <input 
-          type='text' 
-          id='searchQuery' 
-          value={queryInput} 
-          name='searchQuery' 
-          onChange={handleChange}
-          onFocus={handleFocus}
-          />
-          <button type='submit' onClick={handleSubmit}>Search</button>
+          <form>
+            <input 
+            type='text' 
+            id='searchQuery' 
+            value={queryInput} 
+            name='searchQuery' 
+            onChange={handleChange}
+            onFocus={handleFocus}
+            />
+            <button type='submit' onClick={handleSubmit}>Search</button>
+          </form>
         </div>
 
         <Link className='liked' to='/liked'>

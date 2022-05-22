@@ -30,24 +30,23 @@ const BaseLayout = () => {
     )
     .then(res => {
 
-      if (res.errors) {
-        // setQueryError("Seems there's a problem with your network")
-        console.log(`error occurred: ', ${res.errors}`);
-      } else {
+      // if (res.errors) {
+      //   setQueryError("Unable to fetch. Either check network connection or refresh and try again.")
+      //   console.log(`error occurred: ', ${res.errors}`);
+      // } else {
         const allPhotos = res.response.results;
         if (allPhotos.length === 0) {
           setQueryError("Invalid query parameter")
           setLoading(false);
-
         } else {
           setPage((page) => (page + 1));
           fetchedPhotos = [...allPhotos]          
         }
-      }
+      // }
     })
     .catch(err => {
       console.log("Fetch Error", err)
-      setQueryError("Seems there's a problem with your network")
+      setQueryError("Unable to fetch. Either check network connection or refresh and try again.")
     } )
     return fetchedPhotos
 

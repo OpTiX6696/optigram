@@ -86,7 +86,7 @@ const SearchQuery = () => {
       </div>
 
    
-      {queryError && !loading ?<div id='inputError'>{queryError}</div>:null}
+      {queryError && !loading ?<div id='inputError'><p>{queryError}</p></div>:null}
 
       
 

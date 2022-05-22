@@ -53,7 +53,7 @@
       border: none;
       border-radius: 5px;
       color: #16b7f8;
-      font-weight: bolder;
+      font-weight: 400;
       // height: 80%;
     }
   }
@@ -67,7 +67,7 @@
     // background-color: #16b7f8;
     border-radius: 5px;
     color: #16b7f8;
-    font-weight: bolder;
+    font-weight: 400;
     text-align: center;
     width: 30%;
     margin: 0;
@@ -78,13 +78,17 @@
 div#inputError {
   margin: 0 auto;
   width: max-content;
+  max-width: 90%;
   margin-top: 75px;
   border: 1px solid #16b7f8;
   padding: 7px 15px;
   font-family: 'Cinzel', cursive;
   color: red;
   border-radius: 5px;
-  font-size: larger;
+
+  p {
+    font-size: 90%;
+  }
 }
 
 div#skeletonWrapper {

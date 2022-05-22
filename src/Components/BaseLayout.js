@@ -6,7 +6,6 @@ import { Outlet } from 'react-router-dom';
 import Footer from './Footer';
 
 
-
 const BaseLayout = () => {
 
   const [queryInput, setQueryInput] = useState('');
@@ -19,8 +18,6 @@ const BaseLayout = () => {
   const getPhotos = async () => {
     const unsplash = createApi({
       accessKey: Credentials.accessKey
-      // `fetch` options to be sent with every request
-      // headers: { 'X-Custom-Header': 'foo' },
     });
     let fetchedPhotos = null
     await unsplash.search.getPhotos({
@@ -30,13 +27,11 @@ const BaseLayout = () => {
       lang: 'en',
       orderBy: 'relevant'  
     }
-      // `fetch` options to be sent only with _this_ request
-      // { headers: { 'X-Custom-Header-2': 'bar' } },
     )
     .then(res => {
 
       if (res.errors) {
-        setQueryError("Seems there's a problem with your network")
+        // setQueryError("Seems there's a problem with your network")
         console.log(`error occurred: ', ${res.errors}`);
       } else {
         const allPhotos = res.response.results;
@@ -46,7 +41,6 @@ const BaseLayout = () => {
 
         } else {
           setPage((page) => (page + 1));
-          // console.log("ALL PHOTOS", allPhotos)
           fetchedPhotos = [...allPhotos]          
         }
       }
@@ -54,9 +48,7 @@ const BaseLayout = () => {
     .catch(err => {
       console.log("Fetch Error", err)
       setQueryError("Seems there's a problem with your network")
-
     } )
-
     return fetchedPhotos
 
   }

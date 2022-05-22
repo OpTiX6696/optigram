@@ -28,6 +28,15 @@ const SearchQuery = () => {
 
   }
 
+  const Infinityloader = () => {
+    if (photos) {
+      return loader
+    } else {
+      return null
+    }
+  }
+  
+
   
   useEffect(() => {
     if (loading) {
@@ -105,8 +114,8 @@ const SearchQuery = () => {
           pageStart={0}
           loadMore={getMorePhotos}
           hasMore={true || false}
-          threshold={0.2*window.screen.height}
-          loader={<div id='loader'><img alt='' src={loader} /></div>}
+          threshold={0.1*window.screen.height}
+          loader={<div id='loader'><img alt='' src={Infinityloader} /></div>}
           >
             {<RenderPhotos newPhotos = {photos} likedPhotos={likedPhotos} setLikedPhotos={setLikedPhotos}/>}
           </InfiniteScroll>

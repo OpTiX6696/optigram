@@ -36,8 +36,9 @@ const BaseLayout = () => {
       // } else {
         const allPhotos = res.response.results;
         console.log('All Picsss', allPhotos);
-        if (allPhotos.length === 0) {
+        if (allPhotos.length === 0 && !photos) {
           setQueryError("Invalid query parameter")
+
           setLoading(false);
         } else {
           setPage((page) => (page + 1));
@@ -49,7 +50,7 @@ const BaseLayout = () => {
 
       if (err.message === "expected JSON response from server.") {
         console.log("Fetch Error", err.message);
-        if (photos) {
+        if (photos.length > 0) {
           console.log("End of page");
         } else {
           setQueryError("Query unavailable. Either check you spelling or use a similar word.")

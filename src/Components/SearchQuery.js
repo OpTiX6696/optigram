@@ -37,6 +37,7 @@ const SearchQuery = () => {
 
   const getMorePhotos = async () => {
     const morePhotos = await getPhotos();
+    console.log('MOREEEE', morePhotos);
 
     const photoExists = (aPhoto) => {
       return photos.find(e => e.id === aPhoto.id)

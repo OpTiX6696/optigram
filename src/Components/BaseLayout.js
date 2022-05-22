@@ -19,7 +19,7 @@ const BaseLayout = () => {
     const unsplash = createApi({
       accessKey: Credentials.accessKey
     });
-    let fetchedPhotos = null
+    let fetchedPhotos = []
     await unsplash.search.getPhotos({
       query: `${queryInput}`,
       page: page,
@@ -35,6 +35,7 @@ const BaseLayout = () => {
       //   console.log(`error occurred: ', ${res.errors}`);
       // } else {
         const allPhotos = res.response.results;
+        console.log('All Picsss', allPhotos);
         if (allPhotos.length === 0) {
           setQueryError("Invalid query parameter")
           setLoading(false);
@@ -45,8 +46,19 @@ const BaseLayout = () => {
       // }
     })
     .catch(err => {
-      console.log("Fetch Error", err)
-      setQueryError("Unable to fetch. Either check network connection or refresh and try again.")
+
+      if (err.message === "expected JSON response from server.") {
+        console.log("Fetch Error", err.message);
+        if (photos) {
+          console.log("End of page");
+        } else {
+          setQueryError("Query unavailable. Either check you spelling or use a similar word.")
+        }
+      } else if (err.message === "Failed to fetch") {
+        console.log("Fetch Error", err.message)
+        setQueryError("Unable to fetch. Either check network connection or refresh and try again.")
+      }
+      
     } )
     return fetchedPhotos
 

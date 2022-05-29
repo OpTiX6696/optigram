@@ -90,7 +90,9 @@ const SearchQuery = () => {
             onFocus={handleFocus}
             placeholder='Enter Query'
             />
-            <button type='submit' onClick={handleSubmit}>Search</button>
+
+            <button type='submit' onClick={handleSubmit} id='submit'>Search</button>
+            
           </form>
         </div>
 

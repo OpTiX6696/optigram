@@ -3,9 +3,7 @@
 
 
 #header {
-  // border: 2px solid red;
   display: flex;
-  // flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   padding: 7px 5%;
@@ -19,60 +17,68 @@
   z-index: 2;
   box-shadow: 0.1px 0.2px 7px 0.1px #16b8f83a;
   height: 60px;
-  gap: 10px;
+  gap: 1%;
 
 
   div.queryInput {
     // border: 2px solid green;
-    display: flex;
-    // flex-wrap: wrap;
-    gap: 7px;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Forum', cursive;
-    font-size: 1.2rem;
-    margin: 0 15px;
+    margin: 0 auto;
     width: 60%;
+    height: 100%;
+    font-family: 'Forum', cursive;
 
 
-    input#searchQuery {
-      width: 70%;
+    form {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: inherit;
+      font-size: 1.2rem;
+      gap: 1.5%;
+      width: 100%;
+      padding: 0;
       height: 100%;
-      padding: 4px 10px;
-      font-size: inherit;
-      font-family: inherit;
-      border: 1px solid #16b7f8;
-      border-radius: 5px;
+      font-weight: 400;
+
+
+      input#searchQuery {
+        width: 70%;
+        padding: 4px 10px;
+        font-size: inherit;
+        font-family: inherit;
+        border: 1px solid #16b7f8;
+        border-radius: 3px;
+      }
+  
+      button#submit {
+        font-family: inherit;
+        padding: 3px 12px;
+        font-size: inherit;
+        letter-spacing: 1px;
+        background-color: transparent;
+        border: none;
+        border-radius: 5px;
+        color: #16b7f8;
+        font-weight: inherit;
+        // border: 2px solid red;
+        width: max-content;
+      }
+
     }
 
-    button {
-      font-family: inherit;
-      padding: 5px 12px;
-      font-size: inherit;
-      letter-spacing: 1px;
-      background-color: transparent;
-      border: none;
-      border-radius: 5px;
-      color: #16b7f8;
-      font-weight: 400;
-      // height: 80%;
-    }
+
+    
   }
 
   a.liked, a.back {
     text-decoration: none;
     font-family: 'Forum', cursive;
-    padding: 5px 7px;
+    padding: 5px 12px;
     font-size: 1.2rem;
-    letter-spacing: 1px;
-    // background-color: #16b7f8;
-    border-radius: 5px;
+    border-radius: 3px;
     color: #16b7f8;
     font-weight: 400;
-    text-align: center;
-    width: 30%;
-    margin: 0;
-  
+    text-align: center;  
   }
 }
 
@@ -109,21 +115,21 @@ div#skeletonWrapper {
     padding: 3px 2%;
 
     div.queryInput {
-      gap: 10px;
+      // gap: 10px;
       font-size: 1rem;
 
-      button {
+      button#submit {
         padding: 2px 7px;
       }
 
     }
 
     a.liked, a.back {
-      padding: 5px;
+      padding: 5px 0;
       font-size: 1rem;
-      letter-spacing: 0;
+      // letter-spacing: 0;
       // background-color: #16b7f8;
-      border: none;
+      // border: none;
 
     
     }

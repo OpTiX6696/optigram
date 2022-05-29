@@ -5,21 +5,21 @@ import '../Styles/Logo.scss'
 
 const Logo = () => {
 
-  const minScreen = 500;
+  // const minScreen = 500;
 
-  const [logoText, setLogoText] = useState(window.screen.width < minScreen ? "O" : "Optigram");
+  // const [logoText, setLogoText] = useState(window.screen.width < minScreen ? "O" : "Optigram");
 
-  const handleScreenChange = () => {
-    window.screen.width < minScreen ? setLogoText("O") : setLogoText("Optigram");
-  }
+  // const handleScreenChange = () => {
+  //   window.screen.width < minScreen ? setLogoText("O") : setLogoText("Optigram");
+  // }
   
-  window.addEventListener('resize', handleScreenChange)
+  // window.addEventListener('resize', handleScreenChange)
 
 
   return (
     <Link to='/' style={{textDecoration: 'none', color: 'unset'}}>
       <div id='logo'>
-        <h1>{logoText}</h1>
+        <h1>Optigram</h1>
       </div>
     </Link>
   )

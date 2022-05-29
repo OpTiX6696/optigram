@@ -25,6 +25,7 @@
   div.queryInput {
     // border: 2px solid green;
     display: flex;
+    // flex-wrap: wrap;
     gap: 7px;
     justify-content: center;
     align-items: center;
@@ -47,7 +48,7 @@
     button {
       font-family: inherit;
       padding: 5px 12px;
-      font-size: 1.2rem;
+      font-size: inherit;
       letter-spacing: 1px;
       background-color: transparent;
       border: none;

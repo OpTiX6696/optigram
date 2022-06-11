@@ -8,3 +8,10 @@
   font-size: 67%;
   // border: 2px solid red;
 }
+
+@media screen and (max-width: 600px) {
+  div#logo {
+    // color: #16b7f8;
+    font-size: 50%;
+  }
+}

@@ -115,14 +115,27 @@ div#skeletonWrapper {
     padding: 3px 2%;
 
     div.queryInput {
-      // gap: 10px;
-      font-size: 1rem;
 
-      button#submit {
-        padding: 2px 7px;
+      form {
+
+        font-size: 1rem;
+
+        div.queryInput {
+          // gap: 10px;
+          font-size: inherit;
+    
+          button#submit {
+            padding: 2px 7px;
+            font-size: inherit;
+
+          }
+    
+        }
+
       }
-
     }
+
+    
 
     a.liked, a.back {
       padding: 5px 0;
